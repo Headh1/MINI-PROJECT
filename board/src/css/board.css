@@ -1,3 +1,4 @@
+
 /* html{
     cursor: url(../cc.png);
 } */
@@ -27,7 +28,7 @@ th{
 td{
     height: 50px;
 }
-a{
+.aa>a{
     padding : 15px;
     text-decoration : none;
     color : white;
@@ -38,13 +39,15 @@ a{
     margin-top : 50px;
     font-size : 100%;
 }
-a:hover{
+.aa>a:hover{
     background-color: #959175;
 }
 h1{
     /* Text-align: center; */
     color : white;
     font-size: 300%;
+    font-family: 'Shadows Into Light', cursive;
+    Letter-spacing: 10px;
 }
 .aa{
     display: flex;
@@ -60,6 +63,7 @@ ul{
     List-style-type: none;
     display : flex;
 }
+
 .right_page,.left_page,.active{
     background-color: #7a6c5d;
 }
@@ -73,3 +77,8 @@ ul{
     background-color: #3c1518;
 }
 .titlee{width:60%;}
+.list{
+    text-decoration : none;
+    font-size:20px;
+    color : black;
+}

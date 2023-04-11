@@ -90,12 +90,48 @@ finally{
 return $re[0];
 }
 
+function update_info(&$p_arr){
+    $sql="UPDATE board_info
+            SET 
+                board_title = :board_title 
+                , board_contents = :board_contents
+            WHERE 
+                board_no = :board_no"
+            ;
+        $arr= array(
+            ":board_title" => $p_arr["board_title"]
+            ,":board_contents"=>$p_arr["board_contents"]
+            , ":board_no"=>$p_arr["board_no"]
+            );
+
+    $conn= null;
+    try{
+        db($conn);
+        $conn->beginTransaction();
+        $st=$conn->prepare($sql);
+        $st->execute($arr);
+        $re_c= $st->rowCount();
+        $conn->commit();
+    }
+    catch( Exception $e){
+        $conn->rollback();
+        return $e->getmessage();
+    }
+    finally{
+        $conn = null;
+    }
+
+    return $re_c;
+
+    }
+// $arr=array("board_no"=>1,"board_title"=>"리얼 크라임씬1:DY크루즈 살인사건","board_contents"=>"재미없음");
+// echo update($arr);
+
 // todo : test start
 // $i=1;
 // print_r(info_no($i));
 // $ar = array("limit_no"=>5,"offset"=>0);
 // $re = select($ar);
-
 // print_r($re);
 
 // todo : test end

@@ -38,11 +38,14 @@ $re_p = select($arr_p);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/board.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <title>toy project_게시판</title>
 </head>
 <body>
     <header>
-        <h1> REAL WORLD - CRIME SCENE </h1>
+        <h1> CRIME SCENE </h1>
         <nav>
             <ul class ="menu">
                 <li>1</li>
@@ -68,7 +71,7 @@ $re_p = select($arr_p);
                 ?>
                 <tr>
                     <td> <?php echo $recode["board_no"] ?> </td>
-                    <td> <?php echo $recode["board_title"] ?> </td>
+                    <td> <a href="board_update.php?board_no=<?php echo $recode["board_no"] ?>" class ="list"><?php echo $recode["board_title"] ?></a> </td>
                     <td> <?php echo $recode["write_date"] ?> </td>
                 </tr>
             <?php
@@ -77,30 +80,30 @@ $re_p = select($arr_p);
         </tbody>
     </table>
     <div class = "aa">
-    <?php
-    if ($max_page > 1 && $page_num > 1) { ?>
-        <a href="board_list.php?page_num=<?php echo $page_num - 1; ?>"class="left_page"> < </a>
-    <?php
-    }
-    ?>
+        <?php
+        if ($max_page > 1 && $page_num > 1) { ?>
+            <a href="board_list.php?page_num=<?php echo $page_num - 1; ?>"class="left_page"> < </a>
+        <?php
+            }
+        ?>
 
-    <?php
-    for($i = 1; $i<=$max_page; $i++ ){
-        if($page_num==$i){?>
-            <a href="board_list.php?page_num=<?php echo $i; ?>" class="nomal"><?php echo $i ?> </a>
-    <?php
-    }
-    else{?>
-        <a href="board_list.php?page_num=<?php echo $i; ?>" class = "active"><?php echo $i ?> </a>
-    <?php } }
-    ?>
+        <?php
+        for($i = 1; $i<=$max_page; $i++ ){
+            if($page_num==$i){?>
+                <a href="board_list.php?page_num=<?php echo $i; ?>" class="nomal"><?php echo $i ?> </a>
+        <?php
+            }
+        else{?>
+            <a href="board_list.php?page_num=<?php echo $i; ?>" class = "active"><?php echo $i ?> </a>
+        <?php } }
+        ?>
 
-    <?php
-    if ($max_page > 1 && $page_num < $max_page) { ?>
-        <a href="board_list.php?page_num=<?php echo $page_num + 1; ?>" class= "right_page"> > </a>
-    <?php
-    }
-    ?>
+        <?php
+        if ($max_page > 1 && $page_num < $max_page) { ?>
+            <a href="board_list.php?page_num=<?php echo $page_num + 1; ?>" class= "right_page"> > </a>
+        <?php
+        }
+        ?>
     </div>
 
 </body>
