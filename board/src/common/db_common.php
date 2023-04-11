@@ -66,8 +66,33 @@ function board_count(){
     return $re;
 }
 
-// todo : test start
+function info_no(&$p_no){
+$sql = "SELECT board_no,board_title,board_contents
+FROM board_info
+WHERE board_no=:board_no";
 
+$arr=array(":board_no"=>$p_no);
+
+$conn= null;
+try{
+    db($conn);
+    $st=$conn->prepare($sql);
+    $st->execute($arr);
+    $re= $st->fetchall();
+}
+catch( Exception $e){
+    return $e->getmessage;
+}
+finally{
+    $conn = null;
+}
+
+return $re[0];
+}
+
+// todo : test start
+// $i=1;
+// print_r(info_no($i));
 // $ar = array("limit_no"=>5,"offset"=>0);
 // $re = select($ar);
 

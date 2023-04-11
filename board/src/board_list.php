@@ -37,53 +37,29 @@ $re_p = select($arr_p);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./css/board.css">
     <title>toy project_게시판</title>
-    <style>
-        body{
-            display:flex;
-            flex-wrap : wrap;
-            flex-direction : column;
-            width : 1200px;
-        }
-        table{
-            /* border: 1px solid black; */
-            border-collapse : collapse;
-            Text-align: center;
-            width : 500px;
-            /* justify-content :center; */
-            align-content : center;
-        }
-        th{
-            background-color : #a2d2ff;
-        }
-        a{
-            padding : 20px;
-            /* margin: 10px; */
-            /* background-color : #a0c4ff; */
-            /* flex-direction : row; */
-        }
-        h1{
-            /* display : flex; */
-            /* justify-content: center; */
-            Text-align: center;
-        }
-        .aa{
-            display: flex;
-            flex-wrap : nowrap;
-            flex-direction : row;
-            justify-content :center;
-        }
-    </style>
 </head>
 <body>
-    <h1> mini project - 게시판 </h1>
+    <header>
+        <h1> REAL WORLD - CRIME SCENE </h1>
+        <nav>
+            <ul class ="menu">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+            <ul>
+                <li>ㄹ</li>
+            </ul>
+        </nav>
+    </header>
     <table>
         <thead>
-            <tr>
+            <tr class = "tr_th">
                 <th>No</th>
-                <th>제목</th>
-                <th>일자</th>
+                <th class= "titlee">제목</th>
+                <th class= "w_date">일자</th>
             </tr>
         </thead>
         <tbody>
@@ -98,29 +74,30 @@ $re_p = select($arr_p);
             <?php
             }
             ?>
-            <!-- <tr>
-                <td>1</td>
-                <td>제목1</td>
-                <td>2023-04-08</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>제목2</td>
-                <td>2023-04-09</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>제목3</td>
-                <td>2023-04-10</td>
-            </tr> -->
         </tbody>
     </table>
     <div class = "aa">
     <?php
+    if ($max_page > 1 && $page_num > 1) { ?>
+        <a href="board_list.php?page_num=<?php echo $page_num - 1; ?>"class="left_page"> < </a>
+    <?php
+    }
+    ?>
+
+    <?php
     for($i = 1; $i<=$max_page; $i++ ){
-?>
-    <a href="board_list.php?page_num=<?php echo $i; ?>"><?php echo $i?> </a>
-    
+        if($page_num==$i){?>
+            <a href="board_list.php?page_num=<?php echo $i; ?>" class="nomal"><?php echo $i ?> </a>
+    <?php
+    }
+    else{?>
+        <a href="board_list.php?page_num=<?php echo $i; ?>" class = "active"><?php echo $i ?> </a>
+    <?php } }
+    ?>
+
+    <?php
+    if ($max_page > 1 && $page_num < $max_page) { ?>
+        <a href="board_list.php?page_num=<?php echo $page_num + 1; ?>" class= "right_page"> > </a>
     <?php
     }
     ?>
