@@ -24,6 +24,15 @@ else{
     $re= info_no( $ar_p["board_no"] );
 }
 ?>
+<?php
+if(array_key_exists("page_num",$_GET)){
+    // $ar_get = $_GET;
+    $page_num = $_GET["page_num"];
+}
+else{
+    $page_num = 1;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -48,13 +57,17 @@ else{
     <br>
     <button type="submit">
     <?php if($re["board_no"]>=1){ ?>
-            <a href="board_list.php?page_num=1"
+            <a href="board_list.php?page_num=<?php echo $page_num?>"
             <?php
         }?> class="back_b">back</a>
         <?php else if($re["board_no"]>=6){ ?>
             <a href="board_list.php?page_num=2"
             <?php
-        }?> class="back_b">back</a> </button>
+        }?> class="back_b">back</a>
+        <?php else if($re["board_no"]>=6){ ?>
+            <a href="board_list.php?page_num=3"
+            <?php
+        }?> class="back_b">back</a>  </button>
     </form>
 </body>
 </html>
