@@ -12,18 +12,25 @@ $re= select_info($arr_get["board_no"]);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/detail.css">
     <title>Detail</title>
 </head>
 <body>
+<header>
+        <h1> CRIME SCENE </h1>
+        
+    </header>
+    <main>
     <div>
-        <p>게시글 번호 : <?php echo $re["board_no"]?> </p>
-        <p>작성일 : <?php echo $re["write_date"]?></p>
-        <p>게시글 제목 : <?php echo $re["board_title"]?></p>
-        <p>게시글 내용 : <?php echo $re["board_contents"]?></p>
+        <p>  <?php echo $re["board_no"]?> </p>
+        <p> 작성일 <?php echo $re["write_date"]?> </p>
+        <p> 제목 <?php echo $re["board_title"]?> </p>
+        <p> <?php echo $re["board_contents"]?> </p>
 
     </div>
-    <button type="button"><a href:"board_update.php?board_no=</php echo $re["board_no"]" ?> 수정</a></button>
-    <button type="button">삭제</button>
-
+    <button type="button"><a href="board_update.php?board_no=<?php echo $re["board_no"] ?>"> 수정</a></button>
+    <button type="button"><a href="board_delete.php?board_no=<?php echo $re["board_no"] ?>"> 삭제</a></button>
+    <button type="button"><a href="board_list.php?board= <?php echo $re["board_no"] ?> ">취소</a></button>
+    </main>
 </body>
 </html>

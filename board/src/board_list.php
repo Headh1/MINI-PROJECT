@@ -39,36 +39,19 @@ $re_p = select($arr_p);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/board.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-    <title>toy project_게시판</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<title>toy project_게시판</title>
 </head>
 <body>
     <header>
         <h1> CRIME SCENE </h1>
-        <ul class="menu">
-            <li> <a href="#">MENU</a>
-                <ul class="submenu">
-                    <li><a href="#">게시판</a></li>
-                    <li><a href="#">submenu02</a></li>
-                    <li><a href="#">submenu03</a></li>
-        </ul>
-            </li>
-        <!-- <nav>
-            <ul class ="menu">
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
-            <ul>
-                <li>ㄹ</li>
-            </ul> -->
         </nav>
     </header>
-    <table>
-        <thead>
-            <tr class = "tr_th">
-                <th>No</th>
+        <table>
+            <thead>
+                <tr class = "tr_th">
+                    <th>No</th>
                 <th class= "titlee">제목</th>
                 <th class= "w_date">일자</th>
             </tr>
@@ -91,28 +74,29 @@ $re_p = select($arr_p);
         <?php
         if ($max_page > 1 && $page_num > 1) { ?>
             <a href="board_list.php?page_num=<?php echo $page_num - 1; ?>"class="left_page"> < </a>
-        <?php
+            <?php
             }
         ?>
 
-        <?php
+<?php
         for($i = 1; $i<=$max_page; $i++ ){
             if($page_num==$i){?>
                 <a href="board_list.php?page_num=<?php echo $i; ?>" class="nomal"><?php echo $i ?> </a>
-        <?php
+                <?php
             }
-        else{?>
+            else{?>
             <a href="board_list.php?page_num=<?php echo $i; ?>" class = "active"><?php echo $i ?> </a>
-        <?php } }
+            <?php } }
         ?>
 
-        <?php
+<?php
         if ($max_page > 1 && $page_num < $max_page) { ?>
             <a href="board_list.php?page_num=<?php echo $page_num + 1; ?>" class= "right_page"> > </a>
-        <?php
+            <?php
         }
         ?>
     </div>
+
 
 </body>
 </html>

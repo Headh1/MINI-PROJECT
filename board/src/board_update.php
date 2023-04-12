@@ -21,16 +21,14 @@ else{
 
     $re_c = update_info($arr);
 
-    $re= select_info( $ar_p["board_no"] );
+    // $re= select_info( $ar_p["board_no"] );
+
+header("Location: board_detail.php?board_no=".$ar_p["board_no"]);
+exit();
+
 }
 
-if(array_key_exists("page_num",$_GET)){
-    // $ar_get = $_GET;
-    $page_num = $_GET["page_num"];
-}
-else{
-    $page_num = 1;
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -48,6 +46,7 @@ else{
         
     </header>
     <main>
+        <h3> </h3>
     <form method = "post" action="board_update.php">
     <label for="bno">게시글 번호 : </label>
     <input type="text" name="board_no" id="bno" value="<?php echo $re["board_no"]?>" readonly >

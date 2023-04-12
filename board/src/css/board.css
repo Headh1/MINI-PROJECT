@@ -1,24 +1,18 @@
-
 html{
-    /* cursor: url(../cc.png); */
-    /* cursor: url(../사진/cookie.png) auto; */
-    cursor: url(../사진/cc.png), pointer;
+    cursor: url(../사진/cc.png) 50 3, pointer;
+    
 }
 body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    /* width : 95%; */
     justify-content: center;
     background-color : #806e5c;
-
 }
 table {
-    /* width : 800px; */
-    /* display:flex; */
     flex-direction: column;
     text-align: center;
-    width: 100%;
+    width: 1000px;
     justify-content: center;
     margin: 0 auto;
 }
@@ -32,10 +26,7 @@ td {
 }
 .aa > a {
     padding: 15px;
-    text-decoration: none;
     color: white;
-    /* background-color: #583101; */
-    /* margin-right : 10px; */
     transition: 2s;
     width: 50px;
     margin-top: 50px;
@@ -45,11 +36,9 @@ td {
     background-color: #959175;
 }
 h1 {
-    /* Text-align: center; */
     color: white;
     font-size: 400%;
     font-family: 'Shadows Into Light', cursive;
-    /* font-family: 'Lobster', cursive; */
     Letter-spacing: 20px;
     width: 600px;
 }
@@ -85,41 +74,9 @@ ul {
     width: 60%;
 }
 .list {
-    text-decoration: none;
     font-size: 20px;
     color: black;
 }
-.menu {
-    width: 400px;
-    overflow: hidden;
-    margin: 150px auto;
-
+a{
+    text-decoration: none;
 }
-.menu>li {
-    width: 20%;
-    float: left;
-    text-align: center;
-    line-height: 40px;
-    background-color: #754c39;
-}
-.menu a {
-    color: #fff;
-}
-.submenu>li {
-    line-height: 50px;
-    background-color: #8a6452;
-}
-.submenu {
-    height: 0;
-    overflow: hidden;
-}
-.menu>li:hover {
-    background-color: #745c4e;
-    transition-duration: 0.5s;
-}
-
-.menu>li:hover .submenu {
-    height: 250px;
-    transition-duration: 1s;}
-li{list-style:none}
-a{text-decoration: none;}

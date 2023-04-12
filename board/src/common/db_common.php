@@ -125,7 +125,30 @@ function update_info(&$p_arr){
 
     }
 
-    
+    function delete_info(&$p_no){
+        $sql=" UPDATE board_info
+        SET del_flg='1',del_date=NOW()
+        WHERE board_no=:board_no";
+        
+        $arr=array(":board_no"=>$p_no);
+        $conn= null;
+        try{
+            db($conn);
+            $conn->beginTransaction();
+            $st=$conn->prepare($sql);
+            $st->execute($arr);
+            $re= $st->rowCount();
+            $conn->commit();
+        }
+        catch( Exception $e){
+            $conn->rollback();
+            return $e->getmessage;
+        }
+        finally{
+            $conn = null;
+        }
+        return $re;
+}
 // $arr=array("board_no"=>1,"board_title"=>"리얼 크라임씬1:DY크루즈 살인사건","board_contents"=>"재미없음");
 // echo update($arr);
 
