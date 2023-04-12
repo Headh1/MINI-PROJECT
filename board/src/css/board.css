@@ -1,84 +1,125 @@
 
-/* html{
-    cursor: url(../cc.png);
-} */
-body{
-    display:flex;
-    flex-direction : column;
+html{
+    /* cursor: url(../cc.png); */
+    /* cursor: url(../사진/cookie.png) auto; */
+    cursor: url(../사진/cc.png), pointer;
+}
+body {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     /* width : 95%; */
     justify-content: center;
-    cursor: url(../사진/cc.png);
+    background-color : #806e5c;
+
 }
-table{
-    
+table {
     /* width : 800px; */
     /* display:flex; */
-    flex-direction : column;
+    flex-direction: column;
     text-align: center;
-    width : 100%;
+    width: 100%;
     justify-content: center;
     margin: 0 auto;
 }
-th{
-    background-color : #534e4a;
+th {
+    background-color: #534e4a;
     height: 40px;
-    color : white;
+    color: white;
 }
-td{
+td {
     height: 50px;
 }
-.aa>a{
-    padding : 15px;
-    text-decoration : none;
-    color : white;
+.aa > a {
+    padding: 15px;
+    text-decoration: none;
+    color: white;
     /* background-color: #583101; */
     /* margin-right : 10px; */
     transition: 2s;
-    width : 50px;
-    margin-top : 50px;
-    font-size : 100%;
+    width: 50px;
+    margin-top: 50px;
+    font-size: 100%;
 }
-.aa>a:hover{
+.aa > a:hover {
     background-color: #959175;
 }
-h1{
+h1 {
     /* Text-align: center; */
-    color : white;
-    font-size: 300%;
+    color: white;
+    font-size: 400%;
     font-family: 'Shadows Into Light', cursive;
-    Letter-spacing: 10px;
+    /* font-family: 'Lobster', cursive; */
+    Letter-spacing: 20px;
+    width: 600px;
 }
-.aa{
+.aa {
     display: flex;
-    justify-content :center;
-    margin-top:50px;
+    justify-content: center;
+    margin-top: 50px;
 }
-header{
-    background-image: url(../사진/prison.jpg);
+header {
+    background-image: url("../사진/prison.jpg");
     height: 250px;
     margin-bottom: 70px;
 }
-ul{
+ul {
     List-style-type: none;
-    display : flex;
+    display: flex;
 }
-
-.right_page,.left_page,.active{
+.active,
+.left_page,
+.right_page {
     background-color: #7a6c5d;
 }
-.left_page{
-    margin-right : 5px;
+.left_page {
+    margin-right: 5px;
 }
-.right_page{
-    margin-left : 5px;
+.right_page {
+    margin-left: 5px;
 }
-.nomal{
+.nomal {
     background-color: #3c1518;
 }
-.titlee{width:60%;}
-.list{
-    text-decoration : none;
-    font-size:20px;
-    color : black;
+.titlee {
+    width: 60%;
 }
+.list {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+.menu {
+    width: 400px;
+    overflow: hidden;
+    margin: 150px auto;
+
+}
+.menu>li {
+    width: 20%;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    background-color: #754c39;
+}
+.menu a {
+    color: #fff;
+}
+.submenu>li {
+    line-height: 50px;
+    background-color: #8a6452;
+}
+.submenu {
+    height: 0;
+    overflow: hidden;
+}
+.menu>li:hover {
+    background-color: #745c4e;
+    transition-duration: 0.5s;
+}
+
+.menu>li:hover .submenu {
+    height: 250px;
+    transition-duration: 1s;}
+li{list-style:none}
+a{text-decoration: none;}

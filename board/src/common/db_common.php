@@ -66,8 +66,8 @@ function board_count(){
     return $re;
 }
 
-function info_no(&$p_no){
-$sql = "SELECT board_no,board_title,board_contents
+function select_info(&$p_no){
+$sql = "SELECT board_no,board_title,board_contents,write_date
 FROM board_info
 WHERE board_no=:board_no";
 
@@ -124,6 +124,8 @@ function update_info(&$p_arr){
     return $re_c;
 
     }
+
+    
 // $arr=array("board_no"=>1,"board_title"=>"리얼 크라임씬1:DY크루즈 살인사건","board_contents"=>"재미없음");
 // echo update($arr);
 

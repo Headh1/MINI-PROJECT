@@ -13,7 +13,7 @@ else{
 }
 
 
-$limit_no=5;
+$limit_no=7;
 
 $re_c = board_count();
 
@@ -46,7 +46,15 @@ $re_p = select($arr_p);
 <body>
     <header>
         <h1> CRIME SCENE </h1>
-        <nav>
+        <ul class="menu">
+            <li> <a href="#">MENU</a>
+                <ul class="submenu">
+                    <li><a href="#">게시판</a></li>
+                    <li><a href="#">submenu02</a></li>
+                    <li><a href="#">submenu03</a></li>
+        </ul>
+            </li>
+        <!-- <nav>
             <ul class ="menu">
                 <li>1</li>
                 <li>2</li>
@@ -54,7 +62,7 @@ $re_p = select($arr_p);
             </ul>
             <ul>
                 <li>ㄹ</li>
-            </ul>
+            </ul> -->
         </nav>
     </header>
     <table>
@@ -71,7 +79,7 @@ $re_p = select($arr_p);
                 ?>
                 <tr>
                     <td> <?php echo $recode["board_no"] ?> </td>
-                    <td> <a href="board_update.php?board_no=<?php echo $recode["board_no"] ?>" class ="list"><?php echo $recode["board_title"] ?></a> </td>
+                    <td> <a href="board_detail.php?board_no=<?php echo $recode["board_no"] ?>" class ="list"><?php echo $recode["board_title"] ?></a> </td>
                     <td> <?php echo $recode["write_date"] ?> </td>
                 </tr>
             <?php

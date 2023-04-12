@@ -9,7 +9,7 @@ if($http_method === "GET"){
     if(array_key_exists("board_no",$_GET)){
         $board_no = $_GET["board_no"];
     }
-    $re= info_no( $board_no );
+    $re= select_info( $board_no );
 }
 else{
     $ar_p=$_POST;
@@ -21,10 +21,9 @@ else{
 
     $re_c = update_info($arr);
 
-    $re= info_no( $ar_p["board_no"] );
+    $re= select_info( $ar_p["board_no"] );
 }
-?>
-<?php
+
 if(array_key_exists("page_num",$_GET)){
     // $ar_get = $_GET;
     $page_num = $_GET["page_num"];
@@ -40,9 +39,15 @@ else{
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/update.css">
     <title>Document</title>
 </head>
 <body>
+<header>
+        <h1> CRIME SCENE </h1>
+        
+    </header>
+    <main>
     <form method = "post" action="board_update.php">
     <label for="bno">게시글 번호 : </label>
     <input type="text" name="board_no" id="bno" value="<?php echo $re["board_no"]?>" readonly >
@@ -56,18 +61,30 @@ else{
     <button type="submit">수정</button>
     <br>
     <button type="submit">
-    <?php if($re["board_no"]>=1){ ?>
-            <a href="board_list.php?page_num=<?php echo $page_num?>"
-            <?php
-        }?> class="back_b">back</a>
-        <?php else if($re["board_no"]>=6){ ?>
-            <a href="board_list.php?page_num=2"
-            <?php
-        }?> class="back_b">back</a>
-        <?php else if($re["board_no"]>=6){ ?>
-            <a href="board_list.php?page_num=3"
-            <?php
-        }?> class="back_b">back</a>  </button>
+    <?php 
+    if($re["board_no"]>=1 && $re["board_no"]<6){ ?>
+            <a href="board_list.php?page_num=<?php echo 5?>" 
+            class="back_b">back </a><?php
+        } 
+    else if($re["board_no"]>=6 && $re["board_no"]<11){ ?>
+            <a href="board_list.php?page_num=<?php echo 4?>"
+            class="back_b">back</a> <?php
+        } 
+    else if($re["board_no"]>=11 && $re["board_no"]<16){ ?>
+            <a href="board_list.php?page_num=<?php echo 3?>"
+            class="back_b">back</a><?php
+        }
+    else if($re["board_no"]>=16 && $re["board_no"]<21){ ?>
+            <a href="board_list.php?page_num=<?php echo 2?>"
+            class="back_b">back</a><?php
+        }
+    else{ ?>
+        <a href="board_list.php?page_num=<?php echo 1?>"
+            class="back_b">back</a><?php
+    }
+        ?>
+    </button>
     </form>
+    </main>
 </body>
 </html>

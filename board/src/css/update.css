@@ -1,7 +1,26 @@
+
+main{
+    width: 600px;
+    margin:0 auto;
+    
+}
 #contents{
     width: 50px;
     height: 100px;
 }
 .back_b{
     text-decoration : none;
+    color:black;
+}
+header {
+    background-image: url("../사진/prison.jpg");
+    height: 250px;
+    margin-bottom: 70px;
+}
+h1 {
+    /* Text-align: center; */
+    color: white;
+    font-size: 300%;
+    font-family: 'Shadows Into Light', cursive;
+    Letter-spacing: 10px;
 }
