@@ -1,6 +1,7 @@
 <?php
 define( "DOC_ROOT",$_SERVER["DOCUMENT_ROOT"]."/" );
 define( "URL_DB",DOC_ROOT."board/src/common/db_common.php" );
+define( "URL_HEADER", DOC_ROOT."board/src/board_header.php" );
 include_once( URL_DB );
 // $http_method=$_SERVER["REQUEST_METHOD"];
 
@@ -38,40 +39,46 @@ $re_p = select($arr_p);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/board.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-<title>toy project_게시판</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <title>toy project_게시판</title>
 </head>
 <body>
-    <header>
-        <h1> CRIME SCENE </h1>
+    <?php include_once( URL_HEADER );?>
+    <main>
+        <nav>
+            <ul>
+                <li><a href="board_list.php" class="img1">자유게시판</a></li>
+                <li><a href="#" class="img2">real-world</a></li>
+                <li><a href="#" class="img3">ledagames</a></li>
+                <li><a href="#" class="img4" >크라임씬</a></li>
+            </ul>
         </nav>
-    </header>
         <table>
             <thead>
                 <tr class = "tr_th">
-                    <th>No</th>
-                <th class= "titlee">제목</th>
-                <th class= "w_date">일자</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            foreach( $re_p as $recode){
-                ?>
-                <tr>
-                    <td> <?php echo $recode["board_no"] ?> </td>
-                    <td> <a href="board_detail.php?board_no=<?php echo $recode["board_no"] ?>" class ="list"><?php echo $recode["board_title"] ?></a> </td>
-                    <td> <?php echo $recode["write_date"] ?> </td>
+                    <th class= "nono">No</th>
+                    <th class= "titlee">TITLE</th>
+                    <th class= "w_date">DATE</th>
                 </tr>
-            <?php
-            }
-            ?>
-        </tbody>
-    </table>
-    <div class = "aa">
+            </thead>
+            <tbody>
+                <?php
+                foreach( $re_p as $recode){
+                    ?>
+                    <tr>
+                        <td> <?php echo $recode["board_no"] ?> </td>
+                        <td> <a href="board_detail.php?board_no=<?php echo $recode["board_no"] ?>" class ="list"><?php echo $recode["board_title"] ?></a> </td>
+                        <td> <?php echo $recode["write_date"] ?> </td>
+                    </tr>
+                    <?php
+                }
+                ?>
+            </tbody>
+        </table>
+        <a href="board_insert.php"><button type="button" class = "button_i">작성</button></a>
+        <div class = "aa">
         <?php
+        
         if ($max_page > 1 && $page_num > 1) { ?>
             <a href="board_list.php?page_num=<?php echo $page_num - 1; ?>"class="left_page"> < </a>
             <?php
@@ -81,13 +88,14 @@ $re_p = select($arr_p);
 <?php
         for($i = 1; $i<=$max_page; $i++ ){
             if($page_num==$i){?>
-                <a href="board_list.php?page_num=<?php echo $i; ?>" class="nomal"><?php echo $i ?> </a>
+                <a href="board_list.php?page_num=<?php echo $i; ?>" class="active"><?php echo $i ?> </a>
                 <?php
             }
             else{?>
-            <a href="board_list.php?page_num=<?php echo $i; ?>" class = "active"><?php echo $i ?> </a>
+            <a href="board_list.php?page_num=<?php echo $i; ?>" class = "nomal"><?php echo $i ?> </a>
             <?php } }
         ?>
+
 
 <?php
         if ($max_page > 1 && $page_num < $max_page) { ?>
@@ -96,7 +104,7 @@ $re_p = select($arr_p);
         }
         ?>
     </div>
-
+    </main>
 
 </body>
 </html>

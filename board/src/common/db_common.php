@@ -149,15 +149,45 @@ function update_info(&$p_arr){
         }
         return $re;
 }
+
+function insert_info(&$p_arr){
+    $sql="INSERT INTO board_info(board_title,board_contents,write_date)
+    VALUES (:board_title,:board_contents,NOW())";
+
+    $ar_pre = array(":board_title"=>$p_arr["board_title"] ,":board_contents" =>$p_arr["board_contents"]);
+    
+
+$conn = null;
+try{
+    db($conn);
+    $conn->beginTransaction();
+    $st = $conn->prepare($sql);
+    $st->execute($ar_pre);
+    $re= $st->rowCount();
+    $conn->commit();
+}
+catch( Exception $e){
+    $conn->rollback();
+    return $e->getmessage;
+}
+finally{
+    $conn = null;
+}
+return $re;
+
+}
+
+
 // $arr=array("board_no"=>1,"board_title"=>"리얼 크라임씬1:DY크루즈 살인사건","board_contents"=>"재미없음");
 // echo update($arr);
 
 // todo : test start
 // $i=1;
 // print_r(info_no($i));
-// $ar = array("limit_no"=>5,"offset"=>0);
-// $re = select($ar);
+// $ar = array("board_title"=>"제목233324","board_contents"=>"내용12334");
+// $re = insert_info($ar);
 // print_r($re);
+
 
 // todo : test end
 ?>

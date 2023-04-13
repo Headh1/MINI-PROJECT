@@ -1,6 +1,9 @@
+/* *{
+    color : white;
+    text-align: center;
+}
 html{
     cursor: url(../사진/cc.png) 50 3, pointer;
-    
 }
 body {
     display: flex;
@@ -8,6 +11,7 @@ body {
     text-align: center;
     justify-content: center;
     background-color : #806e5c;
+    background-color: rgb(0, 0, 0)
 }
 table {
     flex-direction: column;
@@ -15,14 +19,22 @@ table {
     width: 1000px;
     justify-content: center;
     margin: 0 auto;
-}
-th {
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-top: 60px;
+    background-color: rgb(145, 140, 140,0.3);
+} */
+/* th {
     background-color: #534e4a;
     height: 40px;
     color: white;
-}
-td {
+    border-bottom: 1px solid white;
+    width : 300px;
+    font-size: 25px;
+} */
+/* td {
     height: 50px;
+    color : white;
 }
 .aa > a {
     padding: 15px;
@@ -51,8 +63,8 @@ header {
     background-image: url("../사진/prison.jpg");
     height: 250px;
     margin-bottom: 70px;
-}
-ul {
+} */
+/* ul {
     List-style-type: none;
     display: flex;
 }
@@ -79,4 +91,75 @@ ul {
 }
 a{
     text-decoration: none;
+} */
+
+/* nav{
+    font-size: larger;
+    border: 1px solid white;
+} */
+table{
+    width: 500px;
+    height: 500px;
+    
+}
+th{
+    width: 20%;
+    height: 10%;
+    font-size: 30px;
+    border-bottom: 1px solid white;
+}
+td{width: 10%;
+    height: 20px;
+    font-size: 30px;
+}
+.button_i{
+    width: 60px;
+    height: 40px;
+    background-color: #626264;
+    font-size: 30px;
+}
+a{
+    text-decoration: none;
+}
+/* ul {
+    display: flex;
+    gap: 3rem;
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 0px 20px;
+}
+ul> li {
+    background: url(../사진/nav1.png) no-repeat 1px 1px / 20%;
+    list-style-type: none;
+    padding: 0px 0px 8px 27px;
+    box-sizing: border-box;
+} */
+.active,.nomal{
+    border:5px solid black;
+    padding : 20px;
+    padding-left : 30px;
+    padding-right: 30px;
+    background-color: black;
+}
+.nomal:hover{
+    background-color: transparent;
+}
+.active{
+    background-color: rgb(43, 11, 7);
+}
+div a{
+    padding : 10px;
+}
+/* ul > li {
+    list-style-image:url(../사진/nav1.png);
+}  */
+/* .img1{
+    background-repeat: no-repeat;
+    background-size: contain;
+} */
+.titlee{
+    width: 40%;
+}
+.nono{
+    width: 15px;
 }

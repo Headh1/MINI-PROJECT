@@ -4,22 +4,30 @@ define( "URL_DB",DOC_ROOT."board/src/common/db_common.php" );
 define( "URL_HEADER", DOC_ROOT."board/src/board_header.php" );
 include_once( URL_DB );
 
-$arr_get = $_GET;
-$re= select_info($arr_get["board_no"]);
+$http_method = $_SERVER["REQUEST_METHOD"];
+if($http_method === "POST"){
+    $ar_p=$_POST;
+    $re_c = insert_info($ar_p);
+
+    header("Location: board_list.php");
+    exit();
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/detail.css">
+    <link rel="stylesheet" href="./css/insert.css">
     <link rel="stylesheet" href="./css/all.css">
-    <title>Detail</title>
+    <title> 게시글 작성 </title>
 </head>
 <body>
 <?php include_once( URL_HEADER );?>
     <main>
+        <h3> </h3>
         <nav>
             <ul>
                 <li><a href="board_list.php" class="img1">자유게시판</a></li>
@@ -28,18 +36,21 @@ $re= select_info($arr_get["board_no"]);
                 <li><a href="#" class="img4" >크라임씬</a></li>
             </ul>
         </nav>
-        <div>
-            <p>  <?php echo $re["board_no"]?> </p>
-            <p> 작성일 <?php echo $re["write_date"]?> </p>
-            <p> 제목 <?php echo $re["board_title"]?> </p>
-            <p> <?php echo $re["board_contents"]?> </p>
-
-        </div>
-        <div class ="button_g">
-        <button type="button"><a href="board_update.php?board_no=<?php echo $re["board_no"] ?>"> 수정</a></button>
-        <button type="button"><a href="board_delete.php?board_no=<?php echo $re["board_no"] ?>"> 삭제</a></button>
-        <button type="button"><a href="board_list.php?board= <?php echo $re["board_no"] ?> ">취소</a></button>
-        </div>
+    <form method = "post" action="board_insert.php">
+    <br>
+    <label for="title">제목</label>
+    <input type="text" name="board_title" id="title" >
+    <br>
+    <label for="contents">내용</label>
+    <input type="text" name="board_contents" id="contents" >
+    <br>
+    <button type="submit">작성</button>
+    <br>
+    <button type="submit">
+    <a href="board_list.php?page_num=<?php echo 1?>"
+            class="back_b">back</a>
+    </button>
+    </form>
     </main>
 </body>
 </html>

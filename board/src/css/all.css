@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'ChosunKm';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunKm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GangwonEduSaeeum_OTFMediumA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduSaeeum_OTFMediumA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    color: white;
+    text-align: center;
+    margin : 0 auto;
+    font-family: 'GangwonEduSaeeum_OTFMediumA';
+}
+html{
+    cursor: url(../사진/cc.png) 50 3, pointer;
+}
+body{
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #39393a;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 900px;
+    
+}
+header{
+    background-image: url(../사진/prison.jpg);
+    width: 600px;
+    height: 1000px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin : 0;
+    margin-left: 10%;
+}
+h1 {
+    color: white;
+    font-size: 400%;
+    font-family: 'ChosunKm';
+    Letter-spacing: 20px;
+    width: 600px;
+    line-height: 100px;
+}
+nav{
+    font-size: larger;
+    border: 1px solid white;
+}
+a{
+    text-decoration: none;
+}
+ul {
+    display: flex;
+    gap: 3rem;
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 0px 20px;
+}
+/* ul > li {
+    list-style-type: none;
+    padding: 0px 0px 8px 27px;
+    box-sizing: border-box;
+} */
+li{
+    list-style-type: none;
+    box-sizing: border-box;
+}
+.img1{
+background: url(../사진/nav1.png) no-repeat 1px 1px / 20%;
+    padding: 0px 0px 8px 27px;
+}
+.img2{
+    background: url(../사진/nav2.png) no-repeat 1px 1px / 20%;
+    padding: 0px 0px 8px 27px;
+}
+.img3{
+    background: url(../사진/nav3.png) no-repeat 1px 1px / 20%;
+    padding: 0px 0px 8px 27px;
+}
+.img4{
+    background: url(../사진/nav4.png) no-repeat 1px 1px / 20%;
+    padding: 0px 0px 8px 27px;
+}
