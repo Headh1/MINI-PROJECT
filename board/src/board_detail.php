@@ -7,6 +7,7 @@ include_once( URL_DB );
 $arr_get = $_GET;
 $re= select_info($arr_get["board_no"]);
 ?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -28,18 +29,20 @@ $re= select_info($arr_get["board_no"]);
                 <li><a href="#" class="img4" >크라임씬</a></li>
             </ul>
         </nav>
-        <div>
-            <p>  <?php echo $re["board_no"]?> </p>
-            <p> 작성일 <?php echo $re["write_date"]?> </p>
-            <p> 제목 <?php echo $re["board_title"]?> </p>
-            <p> <?php echo $re["board_contents"]?> </p>
+        <article>
+            <p class="bno">NO.<?php echo $re["board_no"]?></p>
+            <div> 
+                <p class="bti"> <?php echo $re["board_title"]?></p>
+                <p class = "wd"> <?php echo $re["write_date"]?></p>
+            </div>
 
-        </div>
-        <div class ="button_g">
+            <p class="bc"> <?php echo $re["board_contents"]?></p>
+
+
         <button type="button"><a href="board_update.php?board_no=<?php echo $re["board_no"] ?>"> 수정</a></button>
         <button type="button"><a href="board_delete.php?board_no=<?php echo $re["board_no"] ?>"> 삭제</a></button>
         <button type="button"><a href="board_list.php?board= <?php echo $re["board_no"] ?> ">취소</a></button>
-        </div>
+        </article>
     </main>
 </body>
 </html>

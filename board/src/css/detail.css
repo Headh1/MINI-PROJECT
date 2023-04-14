@@ -1,7 +1,11 @@
-div{
+article{
     color:black;
     font-size:50px;
-    background-color: rgb(129, 124, 124);
+    background-color: #817c7c;
+    width:500px;
+    height: 60%;
+    padding:5px;
+    text-align: center;
 }
 .button_g{
     display: flex;
@@ -12,4 +16,34 @@ button{
     height: 50px;
     background-color: #626264;
     font-size: 20px;
+    margin-top: 30px;
+}
+div{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    padding: 5px
+}
+.bno{
+    font-size: 40px;
+    width:200px;
+    margin : 0;
+}
+.wd{
+    font-size: 20px;
+    width:200px;
+    margin-right: 0;
+    margin-left: 0;
+}
+.bti{
+    width:250px;
+    height: 10%;
+    margin : 0;
+    font-size:55%;
+}
+.bc{
+    height: 250px;
+    font-size: 60%;
+    margin-top: 10px;
 }

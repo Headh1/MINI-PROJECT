@@ -1,102 +1,4 @@
-/* *{
-    color : white;
-    text-align: center;
-}
-html{
-    cursor: url(../사진/cc.png) 50 3, pointer;
-}
-body {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    background-color : #806e5c;
-    background-color: rgb(0, 0, 0)
-}
-table {
-    flex-direction: column;
-    text-align: center;
-    width: 1000px;
-    justify-content: center;
-    margin: 0 auto;
-    border-collapse: collapse;
-    margin: 0 auto;
-    margin-top: 60px;
-    background-color: rgb(145, 140, 140,0.3);
-} */
-/* th {
-    background-color: #534e4a;
-    height: 40px;
-    color: white;
-    border-bottom: 1px solid white;
-    width : 300px;
-    font-size: 25px;
-} */
-/* td {
-    height: 50px;
-    color : white;
-}
-.aa > a {
-    padding: 15px;
-    color: white;
-    transition: 2s;
-    width: 50px;
-    margin-top: 50px;
-    font-size: 100%;
-}
-.aa > a:hover {
-    background-color: #959175;
-}
-h1 {
-    color: white;
-    font-size: 400%;
-    font-family: 'Shadows Into Light', cursive;
-    Letter-spacing: 20px;
-    width: 600px;
-}
-.aa {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-header {
-    background-image: url("../사진/prison.jpg");
-    height: 250px;
-    margin-bottom: 70px;
-} */
-/* ul {
-    List-style-type: none;
-    display: flex;
-}
-.active,
-.left_page,
-.right_page {
-    background-color: #7a6c5d;
-}
-.left_page {
-    margin-right: 5px;
-}
-.right_page {
-    margin-left: 5px;
-}
-.nomal {
-    background-color: #3c1518;
-}
-.titlee {
-    width: 60%;
-}
-.list {
-    font-size: 20px;
-    color: black;
-}
-a{
-    text-decoration: none;
-} */
 
-/* nav{
-    font-size: larger;
-    border: 1px solid white;
-} */
 table{
     width: 500px;
     height: 500px;
@@ -104,12 +6,13 @@ table{
 }
 th{
     width: 20%;
-    height: 10%;
+    height: 30px;
     font-size: 30px;
     border-bottom: 1px solid white;
 }
-td{width: 10%;
-    height: 20px;
+td{
+    width: 10%;
+    height: 30px;
     font-size: 30px;
 }
 .button_i{
@@ -120,20 +23,8 @@ td{width: 10%;
 }
 a{
     text-decoration: none;
+    font-size:20px;
 }
-/* ul {
-    display: flex;
-    gap: 3rem;
-    box-sizing: border-box;
-    margin: 10px;
-    padding: 0px 20px;
-}
-ul> li {
-    background: url(../사진/nav1.png) no-repeat 1px 1px / 20%;
-    list-style-type: none;
-    padding: 0px 0px 8px 27px;
-    box-sizing: border-box;
-} */
 .active,.nomal{
     border:5px solid black;
     padding : 20px;
@@ -150,13 +41,6 @@ ul> li {
 div a{
     padding : 10px;
 }
-/* ul > li {
-    list-style-image:url(../사진/nav1.png);
-}  */
-/* .img1{
-    background-repeat: no-repeat;
-    background-size: contain;
-} */
 .titlee{
     width: 40%;
 }

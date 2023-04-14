@@ -27,7 +27,6 @@ if($http_method === "POST"){
 <body>
 <?php include_once( URL_HEADER );?>
     <main>
-        <h3> </h3>
         <nav>
             <ul>
                 <li><a href="board_list.php" class="img1">자유게시판</a></li>
@@ -36,6 +35,7 @@ if($http_method === "POST"){
                 <li><a href="#" class="img4" >크라임씬</a></li>
             </ul>
         </nav>
+        <h2> 게시글 작성 </h2>
     <form method = "post" action="board_insert.php">
     <br>
     <label for="title">제목</label>
@@ -44,12 +44,13 @@ if($http_method === "POST"){
     <label for="contents">내용</label>
     <input type="text" name="board_contents" id="contents" >
     <br>
+    <div>
     <button type="submit">작성</button>
-    <br>
     <button type="submit">
-    <a href="board_list.php?page_num=<?php echo 1?>"
+    <a href="board_list.php"
             class="back_b">back</a>
     </button>
+    </div>
     </form>
     </main>
 </body>

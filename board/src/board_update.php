@@ -46,29 +46,31 @@ exit();
 <?php include_once( URL_HEADER );?>
     <main>
     <nav>
-            <ul>
-                <li><a href="board_list.php" class="img1">자유게시판</a></li>
-                <li><a href="#" class="img2">real-world</a></li>
-                <li><a href="#" class="img3">ledagames</a></li>
-                <li><a href="#" class="img4" >크라임씬</a></li>
-            </ul>
-        </nav>
-        <h3> </h3>
+        <ul>
+            <li><a href="board_list.php" class="img1">자유게시판</a></li>
+            <li><a href="#" class="img2">real-world</a></li>
+            <li><a href="#" class="img3">ledagames</a></li>
+            <li><a href="#" class="img4" >크라임씬</a></li>
+        </ul>
+    </nav>
+    <h2> 게시글 수정 </h2>
     <form method = "post" action="board_update.php">
-    <label for="bno">번호</label>
-    <input type="text" name="board_no" id="bno" value="<?php echo $re["board_no"]?>" readonly >
-    <br>
-    <label for="title">제목</label>
-    <input type="text" name="board_title" id="title" value="<?php echo $re["board_title"]?>" >
-    <br>
-    <label for="contents">내용</label>
-    <input type="text" name="board_contents" id="contents" value="<?php echo $re["board_contents"]?>" >
-    <br>
-    <div class="button_g">
-    <button type="submit">수정</button>
-    <button type="submit"><a href="board_detail.php?page_num=<?php echo $re["board_no"]?>" 
-            class="back_b">back </a></button>
-    </div>
+        <label for="bno">번호</label>
+        <input type="text" name="board_no" id="bno" value="<?php echo $re["board_no"]?>" readonly >
+        <br>
+        
+        <label for="title">제목</label>
+        <input type="text" name="board_title" id="title" value="<?php echo $re["board_title"]?>" >
+        <br>
+        
+        <label for="contents">내용</label>
+        <input type="text" name="board_contents" id="contents" value="<?php echo $re["board_contents"]?>" >
+        <br>
+        
+        <div>
+            <button type="submit">수정</button>
+            <button type="submit"><a href="board_detail.php?board_no=<?php echo $re["board_no"]?>" class="back_b">back </a></button>
+        </div>
     </form>
     </main>
 </body>

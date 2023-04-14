@@ -48,7 +48,7 @@ $re_p = select($arr_p);
         <nav>
             <ul>
                 <li><a href="board_list.php" class="img1">자유게시판</a></li>
-                <li><a href="#" class="img2">real-world</a></li>
+                <li><a href="/real/real_list.php" class="img2">real-world</a></li>
                 <li><a href="#" class="img3">ledagames</a></li>
                 <li><a href="#" class="img4" >크라임씬</a></li>
             </ul>
@@ -76,35 +76,50 @@ $re_p = select($arr_p);
             </tbody>
         </table>
         <a href="board_insert.php"><button type="button" class = "button_i">작성</button></a>
-        <div class = "aa">
-        <?php
         
-        if ($max_page > 1 && $page_num > 1) { ?>
+        <div class = "aa">
+            <a href="board_list.php?page_num=1"class="left_page"> << </a>
+            <?php
+                if ($max_page > 1 && $page_num > 1) { 
+            ?>
+            
             <a href="board_list.php?page_num=<?php echo $page_num - 1; ?>"class="left_page"> < </a>
+            
             <?php
-            }
-        ?>
+                } 
+            ?>
+            
+            <?php
+                for($i = 1; $i<=$max_page; $i++ ){
+                if($page_num==$i){
+            ?>
+            
+            <a href="board_list.php?page_num=<?php echo $i; ?>" class="active"><?php echo $i ?> </a>
+            
+            <?php
+                }
+                else{
+            ?>
 
-<?php
-        for($i = 1; $i<=$max_page; $i++ ){
-            if($page_num==$i){?>
-                <a href="board_list.php?page_num=<?php echo $i; ?>" class="active"><?php echo $i ?> </a>
-                <?php
-            }
-            else{?>
             <a href="board_list.php?page_num=<?php echo $i; ?>" class = "nomal"><?php echo $i ?> </a>
-            <?php } }
-        ?>
+            
+            <?php 
+                    } 
+                }
+            ?>
 
-
-<?php
-        if ($max_page > 1 && $page_num < $max_page) { ?>
-            <a href="board_list.php?page_num=<?php echo $page_num + 1; ?>" class= "right_page"> > </a>
             <?php
-        }
-        ?>
-    </div>
+                if ($max_page > 1 && $page_num < $max_page) { 
+            ?>
+            
+            <a href="board_list.php?page_num=<?php echo $page_num + 1; ?>" class= "right_page"> > </a>
+            
+            <?php
+                }   
+            ?>
+            
+            <a href="board_list.php?page_num=<?php echo $max_page; ?>" class= "right_page"> >> </a>
+        </div>
     </main>
-
 </body>
 </html>
