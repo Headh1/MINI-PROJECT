@@ -22,6 +22,7 @@ if($http_method === "POST"){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/insert.css">
     <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title> 게시글 작성 </title>
 </head>
 <body>

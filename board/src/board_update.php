@@ -40,6 +40,7 @@ exit();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/update.css">
     <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
 <body>

@@ -14,7 +14,7 @@ else{
 }
 
 
-$limit_no=7;
+$limit_no=6;
 
 $re_c = board_count();
 
@@ -40,6 +40,8 @@ $re_p = select($arr_p);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/board.css">
     <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/style.css">
+
     <title>toy project_게시판</title>
 </head>
 <body>

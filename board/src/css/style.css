@@ -1,16 +1,4 @@
-/* @font-face {
-    font-family: 'ChosunKm';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunKm.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'GangwonEduSaeeum_OTFMediumA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduSaeeum_OTFMediumA.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-} */
-@media(min-width:900px) and (max-width:2000px){
+@media (max-width:899px){
 *{
     color: white;
     text-align: center;
@@ -22,7 +10,7 @@ html{
 }
 body{
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     background-color: #39393a;
 }
 main{
@@ -34,12 +22,11 @@ main{
 }
 header{
     background-image: url(../사진/prison.jpg);
-    width: 600px;
-    height: 1000px;
+    width: 100%;
+    height: 300px;
     background-repeat: no-repeat;
     background-size: cover;
     margin : 0;
-    margin-left: 10%;
 }
 h1 {
     color: white;
@@ -63,11 +50,6 @@ ul {
     margin: 10px;
     padding: 0px 20px;
 }
-/* ul > li {
-    list-style-type: none;
-    padding: 0px 0px 8px 27px;
-    box-sizing: border-box;
-} */
 li{
     list-style-type: none;
     box-sizing: border-box;

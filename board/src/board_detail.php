@@ -16,6 +16,7 @@ $re= select_info($arr_get["board_no"]);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/detail.css">
     <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Detail</title>
 </head>
 <body>
@@ -41,7 +42,7 @@ $re= select_info($arr_get["board_no"]);
 
         <button type="button"><a href="board_update.php?board_no=<?php echo $re["board_no"] ?>"> 수정</a></button>
         <button type="button"><a href="board_delete.php?board_no=<?php echo $re["board_no"] ?>"> 삭제</a></button>
-        <button type="button"><a href="board_list.php?board= <?php echo $re["board_no"] ?> ">취소</a></button>
+        <button type="button"><a href="board_list.php?board_no= <?php echo $re["board_no"] ?> ">취소</a></button>
         </article>
     </main>
 </body>
