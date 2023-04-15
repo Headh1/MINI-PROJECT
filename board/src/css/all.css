@@ -1,16 +1,16 @@
-/* @font-face {
-    font-family: 'ChosunKm';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunKm.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'GangwonEduSaeeum_OTFMediumA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduSaeeum_OTFMediumA.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-} */
 @media(min-width:900px) and (max-width:2000px){
+    @font-face {
+        font-family: 'ChosunKm';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunKm.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'GangwonEduSaeeum_OTFMediumA';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduSaeeum_OTFMediumA.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
 *{
     color: white;
     text-align: center;
@@ -18,7 +18,7 @@
     font-family: 'GangwonEduSaeeum_OTFMediumA';
 }
 html{
-    cursor: url(../사진/cc.png) 50 3, pointer;
+    cursor: url(../사진/cc.png) 10 15, pointer;
 }
 body{
     display: flex;
